@@ -3,12 +3,14 @@
     justify-content: space-between
     .feedback_promo
         font-size: 22px
-        font-weight: 500
+        font-weight: 200
     #userNumber
         height: 40px
         width: 200px
         padding: 0 10px
         margin-right: 10px
+        border: 1px solid var(--foreground)
+        border-radius: 5px
     #confidence
         margin-right: 5px
     .fa-brands
@@ -20,3 +22,10 @@
 @media screen and ( max-width: 600px )
     .feedback
         flex-direction: column
+        .feedback_input__block
+            flex-direction: column
+            #userNumber
+                margin-bottom: 10px
+                width: 100%
+            .button
+                width: 100%

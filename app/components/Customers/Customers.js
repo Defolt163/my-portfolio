@@ -1,10 +1,44 @@
+'use client'
 import Image from "next/image";
 import documentImage from '/public/document.png'
 import './customers.sass'
+import { useEffect, useRef, useState } from "react";
 
 export default function Customers() {
+    const sectionRefs = useRef([]);
+  const [visibleSections, setVisibleSections] = useState({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = entry.target.getAttribute('data-index');
+
+          // Добавляем текущий раздел в видимые
+          setVisibleSections(prev => ({ ...prev, [index]: true }));
+
+          // Отключаем наблюдение за этим элементом, чтобы не перезаписывать состояние
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sectionRefs.current.forEach(ref => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      sectionRefs.current.forEach(ref => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, []);
   return (
-    <section className="mb50 container center">
+    <section ref={el => (sectionRefs.current[0] = el)} data-index="0" className={`mb50 customer_block container center ${visibleSections[0] ? 'reveal' : ''}`}>
         <h3 className='page-header mb20'>
           Партнерство
         </h3>

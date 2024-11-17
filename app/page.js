@@ -6,35 +6,10 @@ import Portfolio from './components/Portfolio/Portfolio';
 import Feedback from './components/Feedback/Feedback';
 import Link from 'next/link';
 import Slider from "react-slick";
+import ModalGetOrder from './components/ModalGetOrder/ModalGetOrder';
+import { useInViewport } from 'react-in-viewport'
 
 export default function Home() {
-  const [coords, setCoords] = useState({x: 0, y: 0});
-
-  useEffect(() => {
-    const handleWindowMouseMove = event => {
-      setCoords({
-        x: event.clientX,
-        y: event.clientY,
-      });
-    };
-    window.addEventListener('mousemove', handleWindowMouseMove);
-
-    return () => {
-      window.removeEventListener(
-        'mousemove',
-        handleWindowMouseMove,
-      );
-    };
-  }, [])
-
-  let sliderRef = useRef(null);
-  const play = () => {
-    sliderRef.slickPlay();
-  };
-  const pause = () => {
-    sliderRef.slickPause();
-  };
-
   const settings = {
     dots: false,
     arrows: false,
@@ -72,20 +47,59 @@ export default function Home() {
     ]
   }
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const closeModal = () => {
+      setIsModalOpen(false)
+  };
+
+  const sectionRefs = useRef([]);
+  const [visibleSections, setVisibleSections] = useState({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = entry.target.getAttribute('data-index');
+
+          // Добавляем текущий раздел в видимые
+          setVisibleSections(prev => ({ ...prev, [index]: true }));
+
+          // Отключаем наблюдение за этим элементом, чтобы не перезаписывать состояние
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sectionRefs.current.forEach(ref => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      sectionRefs.current.forEach(ref => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, []);
+
   return (
     <main>
-      <section className="promo container center flex">
+      <section ref={el => (sectionRefs.current[0] = el)} data-index="0" className={`promo container center ${visibleSections[0] ? 'reveal' : ''} flex`}>
         <h1 className="promo_text mb20">Создание <strong>САЙТОВ</strong> и <strong>WEB</strong> приложений</h1>
-        <h2 className='mb20'>Добро пожаловать! Меня зовут Михаил, я из г.Самара, занимаюсь веб разработкой {">2"} лет. В свободное от работы время я создаю свои собственные пет-проекты.</h2>
+        <h2 className='mb20'>Добро пожаловать! Меня зовут Михаил, я из г.Самара, занимаюсь веб разработкой {">2"} лет.<br/> В свободное от работы время я создаю свои собственные пет-проекты.</h2>
         <div className='flex w50 mb10 promo_social__media'>
-          <div className='button btn_about__me'>Обо мне</div>
+          <Link href={'/about'} className='button btn_about__me'>Обо мне</Link>
           <Link href={'https://github.com/Defolt163'} target='_blank'  className='button btn_about__me'>GitHub</Link>
           <Link href={'https://samara.hh.ru/resume/98b38a72ff09486ab30039ed1f7867524d6248'} target='_blank' className='button btn_about__me'>hh.ru</Link>
           <Link href={'https://www.avito.ru/samara/predlozheniya_uslug/veb_razrabotka_saytov_i_veb_prilozheniy_pod_klyuch_4130968742'} target='_blank' className='button btn_about__me'>Avito</Link>
         </div>
-        <div className='button btn_about__me red'>Связаться!</div>
+        <div onClick={()=>{setIsModalOpen(true)}} className='button btn_about__me red'>Связаться!</div>
       </section>
-      <section className='partners center container mb50'>
+      <section ref={el => (sectionRefs.current[1] = el)} data-index="1" className={`partners center container mb50 ${visibleSections[1] ? 'reveal' : ''}`}>
         <h3 className='page-header'>Клиенты</h3>
         <div className="slider-container">
       <Slider className='partners_logo_block' {...settings}>
@@ -101,7 +115,7 @@ export default function Home() {
       </Slider>
     </div>
       </section>
-      <section className='services container center mb50'>
+      <section ref={el => (sectionRefs.current[2] = el)} data-index="2" className={`services container center mb50 ${visibleSections[2] ? 'reveal' : ''}`}>
         <h3 className='page-header mb20'>
           Что я могу вам <strong>ПРЕДЛОЖИТЬ</strong>
         </h3>
@@ -111,7 +125,7 @@ export default function Home() {
             <div className='mb20 services_item__text'>Одностраничный сайт — это оптимальный инструмент для небольших компаний, которые хотят протестировать новые ниши, запустить временные промо-акции или просто представить свои услуги в интернете. </div>
             <div className='card_item__ico flex mb10'>
               <i className="fa-regular fa-clock ico-bgc"></i>
-              <h4><strong>Срок:</strong> от 1 недели</h4>
+              <h4><strong>Срок:</strong>  от 1 недели</h4>
             </div>
             <div className='card_item__ico flex'>
               <i className="fa-solid fa-tv ico-bgc"></i>
@@ -145,7 +159,7 @@ export default function Home() {
         </div>
       </section>
       <Customers/>
-      <section className='container center mb50'>
+      <section ref={el => (sectionRefs.current[3] = el)} data-index="3" className={`container promo_work center mb50 ${visibleSections[3] ? 'reveal' : ''}`}>
         <h3 className='page-header mb20'>
           <strong>РАБОТА</strong> включает в себя
         </h3>
@@ -178,8 +192,7 @@ export default function Home() {
       </section>
       <Portfolio/>
       <Feedback/>
-      <div className='background_cursor_gradient' style={{maskImage: `radial-gradient(600px at ${coords.x}px ${coords.y}px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%)`}}></div>
-      <div className='background' style={{maskImage: `radial-gradient(600px at ${coords.x}px ${coords.y}px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%)`}}></div>
+      {isModalOpen == true ? <ModalGetOrder onClose={closeModal}/> : null}
     </main>
   );
 }

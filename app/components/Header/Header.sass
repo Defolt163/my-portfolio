@@ -1,19 +1,30 @@
-@import '../../variables.sass'
 header
     position: fixed
+    z-index: 999
     top: 0
     left: 50%
     transform: translateX(-50%)
     width: max-content
     padding: 2rem 0
     justify-content: flex-end
+.header_shadow
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 75px
+    backdrop-filter: blur(10px)
+    z-index: 10
+    pointer-events: none
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))
 
 .link_header__block
-    border: 1px solid $foreground
+    border: 1px solid var(--foreground)
     padding: 5px
     border-radius: 1rem
     backdrop-filter: blur(10px)
-    background-color: rgba(0, 0, 0, .3)
+    background-color: var(--background-transparent)
     li
         display: flex
         margin-right: 3px
@@ -21,17 +32,23 @@ header
         &:last-child
             margin-right: 0
         .link_header__block_item
-            border: 0px solid #9595954d
+            border: 0px solid var(--sub-border)
             border-radius: 0.75rem
             background-color: #transparent
             padding: 4px 12px
+            cursor: pointer
             &.active
-                background-color: #2e2e2e
-                border: 1px solid #9595954d
+                background-color: var(--sub-background)
+                border: 1px solid var(--sub-border)
             span
                 margin-left: 5px
 
 @media screen and ( max-width: 500px )
+    .header_shadow
+        top: auto
+        bottom: 0
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))
+        -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))
     header
         top: auto
         bottom: 0

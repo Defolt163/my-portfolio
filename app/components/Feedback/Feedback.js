@@ -8,7 +8,7 @@ export default function Feedback(){
         <section className="mb50 container center flex feedback">
             <div className="w60 md-w100">
                 <h3 className="mb20 feedback_promo">Если вам нужна помощь в разработке сайта, обращайтесь! Я с радостью проконсультирую вас абсолютно <strong>БЕСПЛАТНО.</strong></h3>
-                <div className="flex mb10">
+                <div className="flex feedback_input__block mb10">
                     <input placeholder="+7 (___) ___ __-__" id="userNumber"/>
                     <div className="button">Отправить</div>
                 </div>
@@ -16,7 +16,7 @@ export default function Feedback(){
                     <input id="confidence" type="checkbox"/>
                     <label htmlFor="confidence">Отправляя форму вы даете согласие на обработку персональных данных</label>
                 </div>
-                <h3 className="page-header mb20">А так-же в мессенджерах!</h3>
+                <h3 className="page-header mb20">А так-же напишите в мессенджерах!</h3>
                 <div className="flex">
                     <Link className="fa-brands" href={'https://t.me/gp_romanov'} target="_blank"><i className="fa-brands fa-telegram"></i></Link>
                     <Link className="fa-brands" href={'/'}><i className="fa-brands fa-viber"></i></Link>

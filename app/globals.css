@@ -1,16 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+  font-family: BlackerSansPro;
+  src: url(/fonts/BlackerSansProVariableGX.ttf);
+}
 html,
 body {
   padding: 0 15px;
   max-width: 100vw;
   overflow-x: hidden;
 }
-:root{
-
+strong{
+  font-weight: 250;
 }
+:root{
+  --foreground: #111111;
+  --background: #fff;
+  --card-bg: #e9e9e9;
+  --sub-background: #dadada;
+  --sub-border: rgba(149, 149, 149, 0.3019607843);
+  --background-transparent: rgba(0, 0, 0, 0.02);
+  --ico-effect: brightness(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  :root{
+    --foreground: #fff;
+    --background: #111111;
+    --card-bg: #141414;
+    --sub-background: #2e2e2e;
+    --sub-border: #9595954d;
+    --background-transparent: rgba(0, 0, 0, .3);
+    --ico-effect: grayscale(1);
+  }
+}
+
 .background_cursor_gradient{
   position: fixed;
   z-index: -1;
@@ -37,7 +65,8 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: BlackerSansPro, Arial, Helvetica, sans-serif;
+  font-weight: 180;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -53,16 +82,6 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  :root{
-    --foreground: #fff;
-    --background: #111111
-  }
-}
-
 ul{
   list-style: none;
 }
@@ -76,6 +95,7 @@ ul{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: max-content;
   background: var(--foreground);
   padding: 5px 10px;
   cursor: pointer;
@@ -96,12 +116,20 @@ ul{
 }
 
 .font-light{
-  font-weight: 200;
+  font-weight: 40;
 }
 
 .page-header{
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 150;
+}
+
+.page-subheader{
+  font-size: 27px;
+}
+
+.page-content .page-subheader{
+  font-size: 21px;
 }
 
 .fz18{
@@ -179,4 +207,70 @@ ul{
   :root {
     --radius: 0.5rem;
   }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
+
+.modal_wrapper{
+  position: relative;
+  border-radius: 3rem;
+  padding: 15px 10px 0;
+  background-color: var(--background);
+}
+
+.modal-close{
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  line-height: 0;
+  color: #ff0000;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.promo,
+.partners,
+.services,
+.customer_block,
+.promo_work {
+  opacity: 0; /* Начальное состояние (невидимо) */
+  transform: translateX(-50px); /* Сдвинет элемент вниз */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.promo::before,
+.partners::before,
+.services::before,
+.customer_block::before,
+.promo_work::before {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  backdrop-filter: blur(30px);
+  transform: translateX(0); /* Сдвинет элемент вниз */
+  transition: backdrop-filter 0.5s ease-out;
+}
+
+
+.reveal {
+  opacity: 1; /* Конечное состояние (видимо) */
+  transform: translateX(0); /* Вернёт на исходное место */
+}
+.reveal::before{
+  backdrop-filter: blur(0px) /* Вернёт на исходное место */
 }

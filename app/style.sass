@@ -3,6 +3,11 @@
     flex-direction: column
     justify-content: center
     align-items: flex-start
+    .promo_text
+        font-size: 80px
+        text-wrap: balance
+    h2
+        font-size: 25px
     .btn_about__me
         line-height: 1.5
         margin-right: 10px
@@ -23,8 +28,6 @@
                 &::after
                     width: 13px
                     transition: width .4s
-    .promo_social__media
-        
     &_text
         font-size: 45px
         font-weight: 200
@@ -35,13 +38,13 @@
         .partner_logo
             height: 150px
             margin: 0 15px
-            filter: grayscale(1)
+            filter: var(--ico-effect)
 .card_block
     gap: 10px
     flex-wrap: wrap
     .card_item
         width: calc( 33% - 5px )
-        background-color: #141414
+        background-color: var(--card-bg)
         padding: 30px 20px
         border-radius: 5px
         .card_item__text
@@ -58,10 +61,20 @@
                 background-color: #404040
                 margin-right: 7px
 
+@media screen and (min-width: 992px) and (max-height: 610px)
+    .promo 
+        padding-top: 70px
+    
+
 @media screen and ( max-width: 992px )
     .card_block
         .card_item
             width: calc( 50% - 5px )
+    .promo
+        .promo_text
+            font-size: 52px
+        h2
+            font-size: 21px
 
 @media screen and ( max-width: 700px )
     .customers

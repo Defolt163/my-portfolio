@@ -1,0 +1,101 @@
+
+.about__link_block
+    position: fixed
+    left: 40px
+    top: 100px
+    font-size: 1.3vw
+    li
+        margin-bottom: 30px
+        &:last-child
+            margin-bottom: 0
+        ul
+            padding-left: 30px
+            font-size: 20px
+            margin-top: 10px
+            li
+                margin-bottom: 15px
+.about_me
+    padding-top: 120px
+    width: 60%
+    margin: 0 auto
+    .about_me_introduction
+        width: 100%
+        .about_me__image_block
+            width: 20%
+            margin-right: 30px
+            .about_me__image
+                background: url('/about-me.jpg') center center/cover no-repeat
+                border-radius: 50%
+                overflow: hidden
+                width: 100%
+                height: fit-content
+                padding-bottom: 100%
+        .about_me__content
+            width: 80%
+            .smm_block
+                li
+                    margin-right: 5px
+                    &:last-child
+                        margin-right: 0
+            .education_block
+                .education__item
+                    align-items: center
+                    margin-bottom: 10px
+                    .education__item_year
+                        min-width: 80px
+                        margin-right: 10px
+                    .education__item_college
+                        width: 70%
+
+@media screen and ( max-width: 900px )
+    .about__link_block
+        display: none
+    .about_me
+        width: 100%
+        .about_me_introduction 
+            .about_me__content 
+                .education_block
+                    .education__item 
+                        .education__item_college
+                            width: 100%
+
+@media screen and ( max-width: 750px )
+    .about_me
+        .about_me_introduction 
+            flex-direction: column
+            .about_me__image_block
+                margin: 0 auto
+                width: 40%
+            .about_me__content
+                width: 100%
+                .name, .birthday, .dev
+                    text-align: center
+                .smm_block 
+                    justify-content: center
+                
+@media screen and ( max-width: 500px )
+    .about_me 
+        padding-top: 40px
+        .about_me_introduction
+            .about_me__image_block
+                width: 65%
+            .about_me__content 
+                .education_block 
+                    .education__item
+                        flex-direction: column
+                        .education__item_year
+                            text-align: center
+                        .education__item_college
+                            text-align: center
+
+@media screen and ( max-width: 348px )
+    .about_me 
+        .about_me_introduction 
+            .about_me__content 
+                .smm_block
+                    display: grid
+                    grid-template-columns: max-content max-content max-content
+                    grid-template-rows: max-content max-content max-content
+                    gap: 5px 5px
+                    li
+                        margin-right: 0
