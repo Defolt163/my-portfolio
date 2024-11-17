@@ -1,0 +1,42 @@
+@import '../../variables.sass'
+header
+    position: fixed
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: max-content
+    padding: 2rem 0
+    justify-content: flex-end
+
+.link_header__block
+    border: 1px solid $foreground
+    padding: 5px
+    border-radius: 1rem
+    backdrop-filter: blur(10px)
+    background-color: rgba(0, 0, 0, .3)
+    li
+        display: flex
+        margin-right: 3px
+        align-items: flex-end
+        &:last-child
+            margin-right: 0
+        .link_header__block_item
+            border: 0px solid #9595954d
+            border-radius: 0.75rem
+            background-color: #transparent
+            padding: 4px 12px
+            &.active
+                background-color: #2e2e2e
+                border: 1px solid #9595954d
+            span
+                margin-left: 5px
+
+@media screen and ( max-width: 500px )
+    header
+        top: auto
+        bottom: 0
+        padding: 0 0 1rem 0
+        .link_header__block
+            .link_header__block_item
+                span
+                    display: none

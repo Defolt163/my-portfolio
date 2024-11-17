@@ -1,0 +1,84 @@
+.promo
+    height: 100vh
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    .btn_about__me
+        line-height: 1.5
+        margin-right: 10px
+        &:first-child
+            margin-right: 23px
+            transition: margin-right .3s      
+            &::after
+                margin-left: 5px
+                content: url('/icons/arrow-right-solid.svg')
+                line-height: 0
+                width: 0
+                height: max-content
+                overflow: hidden
+                transition: width .3s
+            &:hover
+                margin-right: 10px
+                transition: margin-right .4s
+                &::after
+                    width: 13px
+                    transition: width .4s
+    .promo_social__media
+        
+    &_text
+        font-size: 45px
+        font-weight: 200
+.partners
+    .partners_logo_block
+        margin-top: 85px
+        justify-content: space-between
+        .partner_logo
+            height: 150px
+            margin: 0 15px
+            filter: grayscale(1)
+.card_block
+    gap: 10px
+    flex-wrap: wrap
+    .card_item
+        width: calc( 33% - 5px )
+        background-color: #141414
+        padding: 30px 20px
+        border-radius: 5px
+        .card_item__text
+            min-height: 120px
+        .card_item__ico
+            align-items: center
+            .ico-bgc
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: 10px
+                height: 30px
+                width: 30px
+                background-color: #404040
+                margin-right: 7px
+
+@media screen and ( max-width: 992px )
+    .card_block
+        .card_item
+            width: calc( 50% - 5px )
+
+@media screen and ( max-width: 700px )
+    .customers
+        .customers_block
+            flex-direction: column-reverse
+            .ccustomers_block__item
+                width: 100%
+@media screen and ( max-width: 600px )
+    .card_block
+        gap: 10px
+        .card_item
+            width: 100%
+@media screen and ( max-height: 480px )
+    .promo
+        .promo_text
+            font-size: 32px
+        h2
+            font-size: 16px
+        .promo_social__media
+            font-size: 12px
