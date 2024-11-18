@@ -8,6 +8,7 @@ import Link from 'next/link';
 import Slider from "react-slick";
 import ModalGetOrder from './components/ModalGetOrder/ModalGetOrder';
 import { useInViewport } from 'react-in-viewport'
+import FeedbackContainer from './components/Feedback/FeedbackContainer';
 
 export default function Home() {
   const settings = {
@@ -191,7 +192,7 @@ export default function Home() {
         </div>
       </section>
       <Portfolio/>
-      <Feedback/>
+      <FeedbackContainer/>
       {isModalOpen == true ? <ModalGetOrder onClose={closeModal}/> : null}
     </main>
   );
