@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://romanov-dev163.ru/sitemap.xml
