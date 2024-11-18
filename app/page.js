@@ -69,7 +69,7 @@ export default function Home() {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 });
 
     sectionRefs.current.forEach(ref => {
       if (ref) {
