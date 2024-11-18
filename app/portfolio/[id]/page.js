@@ -6,7 +6,6 @@ export default function workPage(){
     return(
         <>
             <WorkInfo/>
-            <Feedback/>
         </>
         
     )
