@@ -1,0 +1,44 @@
+[
+    {
+        "id": "sateco",
+        "name": "САТЭКО",
+        "image": "/portfolio-sites/sateco.ru_.jpg",
+        "link": "https://sateco.ru/"
+    },
+    {
+        "id": "mera-bitum",
+        "name": "МЕРА БИТУМ",
+        "image": "/portfolio-sites/mera.jpg",
+        "link": "https://bitum-pbv.ru/"
+    },
+    {
+        "id": "stealth",
+        "name": "Тренировочный проект",
+        "image": "/portfolio-sites/stealth.jpg",
+        "link": "https://stealth-shop.vercel.app/"
+    },
+    {
+        "id": "housesincity",
+        "name": "Домик в деревне",
+        "image": "/portfolio-sites/housesincity.jpg",
+        "link": "https://снятьдомвсамаре.рф/"
+    },
+    {
+        "id": "birthday",
+        "name": "Сайт приглашение",
+        "image": "/portfolio-sites/birthday.jpg",
+        "link": ""
+    },
+    {
+        "id": "sobes",
+        "name": "Задача из собеседования",
+        "image": "/portfolio-sites/sobes.jpg",
+        "link": ""
+    },
+    {
+        "id": "taxicap",
+        "name": "Пет проект",
+        "image": "/portfolio-sites/taxicap.jpg",
+        "link": ""
+    }
+]

@@ -1,18 +1,28 @@
-.portfolio_card
-    width: 25%
-    height: 300px
-    .portfolio_card__image
-        border-radius: 5px
-        overflow: hidden
-        background-position: top
-        background-size: cover
-        height: 250px
-        width: 100%
+.portfolio_block__wrapper
+    flex-wrap: wrap
+    gap: 10px
+    .portfolio_card
+        width: calc( 25% - 10px )
+        height: 300px
+        .portfolio_card__image
+            border-radius: 5px
+            overflow: hidden
+            background-position: top
+            background-size: cover
+            height: 250px
+            width: 100%
+
+@media screen and ( max-width: 1200px )
+    .portfolio_block__wrapper
+        .portfolio_card
+            width: calc( 33% - 10px )
 
 @media screen and ( max-width: 992px )
-    .portfolio_card
-        width: 50%
+    .portfolio_block__wrapper
+        .portfolio_card
+            width: calc( 50% - 10px )
 
-@media screen and ( max-width: 700px )
-    .portfolio_card
-        width: 100%
+@media screen and ( max-width: 480px )
+    .portfolio_block__wrapper
+        .portfolio_card
+            width: calc( 100% - 10px )

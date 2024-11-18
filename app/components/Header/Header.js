@@ -11,8 +11,11 @@ export default function Header() {
     console.log("Current route:", pathname); // Теперь должно работать
   }, [pathname]);
   const isActive = (link) => {
-    return pathname === link ? 'active' : ''
-  }
+    if (link === "/") {
+      return pathname === link ? "active" : "";
+    }
+    return pathname.startsWith(link) ? "active" : "";
+  };
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 

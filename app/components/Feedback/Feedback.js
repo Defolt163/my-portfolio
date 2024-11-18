@@ -18,7 +18,7 @@ export default function Feedback(){
                 </div>
                 <h3 className="page-header mb20">А так-же напишите в мессенджерах!</h3>
                 <div className="flex">
-                    <Link className="fa-brands" href={'https://t.me/gp_romanov'} target="_blank"><i className="fa-brands fa-telegram"></i></Link>
+                    <Link className="fa-brands" href={'/'} target="_blank"><i className="fa-brands fa-telegram"></i></Link>
                     <Link className="fa-brands" href={'/'}><i className="fa-brands fa-viber"></i></Link>
                     <Link className="fa-brands" href={'/'}><i className="fa-brands fa-whatsapp"></i></Link>
                 </div>
