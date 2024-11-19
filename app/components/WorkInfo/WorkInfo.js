@@ -2,10 +2,10 @@
 import Image from "next/image";
 import './WorkInfo.sass'
 import Link from "next/link";
-import Feedback from "@/app/components/Feedback/Feedback";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import workArrayData from '/app/portfolio.json'
+import FeedbackContainer from "../Feedback/FeedbackContainer";
 
 export default function WorkInfo(){
     const location = usePathname()
@@ -31,7 +31,7 @@ export default function WorkInfo(){
                 <Image className="portfolio_image container center" src={`${workData && workData.image !== "" ? workData.image : '/' }`} alt="presentation" width={900} height={900}/>
                 <Link style={{marginTop: "20px", display: "block"}} href={`${workData && workData.link !== "" ? workData.link : "#"}`}>{workData && workData.link !== "" ? ("Перейти в проект " + workData.name) : null}</Link>
             </div>
-            <Feedback/>
+            <FeedbackContainer/>
         </>
         
     )

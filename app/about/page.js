@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import './style.sass'
-import Feedback from '../components/Feedback/Feedback';
+import FeedbackContainer from '../components/Feedback/FeedbackContainer';
 export const metadata = {
     title: "Обо мне || Gp.Romanov",
     description: "Узнайте больше обо мне, Михаил — веб-разработчик из Самары. Специализируюсь на создании лендингов, корпоративных сайтов, веб-приложений и интернет-магазинов с акцентом на качество, удобство и эстетику. Моя миссия — находить эффективные решения для ваших задач.",
@@ -113,7 +113,7 @@ export default function aboutPage(){
                                 Реализована система аккаунтов, т.е у каждого пользователя свои данные, свои элементы в корзине. Это, практически первые шаги моей разработки в среде NextJS
                             </p>
                         </div>
-                        <Feedback/>
+                        <FeedbackContainer/>
                     </div>
                 </section>
             </div>
