@@ -4,10 +4,10 @@ import imageMe from '/public/me.png'
 import './Feedback.sass'
 import Link from "next/link";
 import { useEffect, useState } from 'react';
-
+import { InputMask } from '@react-input/mask';
 
 export default function Feedback({ onSuccess, onError }){
-    const [agreeCheck, setAgree] = useState(false)
+    const [agreeCheck, setAgree] = useState(true)
     const [message, setMessage] = useState('');
     const [statusPhone, setStatusPhone] = useState('');
     const [statusAgree, setStatusAgree] = useState('');
@@ -53,14 +53,24 @@ export default function Feedback({ onSuccess, onError }){
         <section className="mb50 container center flex feedback">
             <div className="w60 md-w100">
                 <h3 className="mb20 feedback_promo">Если вам нужна помощь в разработке сайта, обращайтесь! Я с радостью проконсультирую вас абсолютно <strong>БЕСПЛАТНО.</strong></h3>
+                <h2 className="mb10">Оставьте свой номер телефона (без 8)</h2>
                 <div className="flex feedback_input__block mb10">
-                    <input 
+                    <InputMask 
+                        mask="+7 (___) ___-__-__" replacement={{ _: /\d/ }} 
                         id="userNumber"
                         className={`error`}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
-                        placeholder="+7 (___) ___ __-__"/>
+                        placeholder="+7 (___) ___ __-__"
+                        />
+                    {/* <input 
+                        id="userNumber"
+                        className={`error`}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        required
+                        placeholder="+7 (___) ___ __-__"/> */}
                     <div onClick={handleSubmit} className="button">Отправить</div>
                 </div>
                 {statusPhone && <span className="error-message">Некорректный номер телефона</span>}

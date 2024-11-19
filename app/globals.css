@@ -205,6 +205,9 @@ ul{
   .md-w80{
     width: 100%;
   }
+  .modal-close{
+    font-size: 18px !important;
+  }
 }
 @layer base {
   :root {
@@ -238,7 +241,7 @@ ul{
   right: 26px;
   line-height: 0;
   color: #ff0000;
-  font-size: 45px;
+  font-size: 25px;
   cursor: pointer;
 }
 
