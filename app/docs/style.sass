@@ -1,0 +1,29 @@
+.reference
+    padding: 90px 0 30px
+    .reference_block
+        justify-content: space-between
+        flex-wrap: wrap
+        .reference_link
+            width: 49%
+            height: 150px
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: var(--card-bg)
+            transition: box-shadow .5s
+            &:hover
+                box-shadow: var(--sub-background) 0 0 20px
+                transition: box-shadow .5s
+    &.reference_content
+        p
+            a
+                color: red
+
+@media screen and ( max-width: 992px )
+    .reference
+        .reference_block
+            gap: 30px
+            .reference_link
+                width: 100%
+                padding: 0 30px
+                text-align: center

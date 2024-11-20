@@ -1,5 +1,13 @@
 'use client'
 import Image from "next/image";
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+  } from "@/components/ui/breadcrumb"
 import './WorkInfo.sass'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -21,13 +29,21 @@ export default function WorkInfo(){
         <>
             <div className="center container mb50 portfolio_page">
                 <h3 className="page-header mb20">{workData && workData.name !== "" ? workData.name : null}</h3>
-                <ul className="flex links_block mb20">
-                    <li><Link href={'/'}>Главная</Link></li>
-                    {'>'}
-                    <li><Link href={'/portfolio'}>Портфолио</Link></li>
-                    {'>'}
-                    <li>{workData && workData.name !== "" ? workData.name : null}</li>
-                </ul>
+                <Breadcrumb className="breadcrumb mb20">
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="/">Главная</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="/portfolio">Портфолио</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbPage className="breadcrumb__active">{workData && workData.name !== "" ? workData.name : null}</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
                 <Image className="portfolio_image container center" src={`${workData && workData.image !== "" ? workData.image : '/' }`} alt="presentation" width={900} height={900}/>
                 <Link style={{marginTop: "20px", display: "block"}} href={`${workData && workData.link !== "" ? workData.link : "#"}`}>{workData && workData.link !== "" ? ("Перейти в проект " + workData.name) : null}</Link>
             </div>

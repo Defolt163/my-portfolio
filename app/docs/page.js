@@ -10,11 +10,11 @@ export const metadata = {
 export default function portfolioPage(){
     return(
         <>
-            <div className="reference ">
-                <h1 className="page-header">Справочник</h1>
+            <div className="reference container center">
+                <h1 className="page-header mb20">Справочник</h1>
                 <div className="reference_block flex">
-                    <Link className="reference_link" href={'/'}>Согласие на обработку персональных данных</Link>
-                    <Link className="reference_link" href={'/'}>Политика конфиденциальности</Link>
+                    <Link className="reference_link" href={'/docs/confidence'}>Согласие на обработку персональных данных</Link>
+                    <Link className="reference_link" href={'/docs/policy'}>Политика конфиденциальности</Link>
                 </div>
             </div>
         </>

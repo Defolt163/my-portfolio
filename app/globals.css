@@ -249,6 +249,13 @@ ul{
   padding: 30px;
 }
 
+.breadcrumb span{
+  color: var(--foreground)
+}
+.breadcrumb a:hover{
+  color: var(--foreground)
+}
+
 .promo,
 .partners,
 .services,

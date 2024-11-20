@@ -29,6 +29,7 @@ export default function Header() {
             <li><Link className={`link_header__block_item ${isActive('/')}`} href={'/'}><i className="fa-solid fa-house"></i><span>Главная</span></Link></li>
             <li><Link className={`link_header__block_item ${isActive('/about')}`} href={'/about'}><i className="fa-regular fa-circle-user"></i><span>Обо мне</span></Link></li>
             <li><Link className={`link_header__block_item ${isActive('/portfolio')}`} href={'/portfolio'}><i className="fa-solid fa-person-digging"></i><span>Портфолио</span></Link></li>
+            <li><Link className={`link_header__block_item ${isActive('/docs')}`} href={'/docs'}><i className="fa-solid fa-info"></i><span>Справочник</span></Link></li>
             <li><div className={`link_header__block_item`} onClick={()=>{setIsModalOpen(true)}}><i className="fa-solid fa-mobile"></i><span>Связаться</span></div></li>
         </ul>
     </header>
