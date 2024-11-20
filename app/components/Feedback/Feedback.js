@@ -15,7 +15,7 @@ export default function Feedback({ onSuccess, onError }){
 
 
     const handleSubmit = async () => {
-        if(agreeCheck && message.length == 11){
+        if(agreeCheck && message.length == 10){
             try {
                 const response = await fetch('/api/sendTelegramMessage', {
                 method: 'POST',
@@ -38,9 +38,9 @@ export default function Feedback({ onSuccess, onError }){
                 setResponseStatus(false);
                 onError()
             }
-        }if(message.length < 11 || message.length > 11 ){
+        }if(message.length < 10 || message.length > 10 ){
             setStatusPhone(true)
-        }if(message.length == 11){
+        }if(message.length == 10){
             setStatusPhone(false)
         }if(!agreeCheck){
             setStatusAgree(true)
@@ -64,13 +64,6 @@ export default function Feedback({ onSuccess, onError }){
                         required
                         placeholder="+7 (___) ___ __-__"
                         />
-                    {/* <input 
-                        id="userNumber"
-                        className={`error`}
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        required
-                        placeholder="+7 (___) ___ __-__"/> */}
                     <div onClick={handleSubmit} className="button">Отправить</div>
                 </div>
                 {statusPhone && <span className="error-message">Некорректный номер телефона</span>}
