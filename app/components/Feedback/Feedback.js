@@ -13,10 +13,6 @@ export default function Feedback({ onSuccess, onError }){
     const [statusAgree, setStatusAgree] = useState('');
     const [responseStatus, setResponseStatus] = useState('')
 
-    useEffect(()=>{
-        console.log(message)
-    },[message])
-
 
     const handleSubmit = async () => {
         if(agreeCheck && message.length == 18){
