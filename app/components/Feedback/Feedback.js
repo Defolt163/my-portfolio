@@ -15,7 +15,7 @@ export default function Feedback({ onSuccess, onError }){
 
 
     const handleSubmit = async () => {
-        if(agreeCheck && message.length == 10){
+        if(agreeCheck && message.length == 18){
             try {
                 const response = await fetch('/api/sendTelegramMessage', {
                 method: 'POST',
@@ -38,9 +38,9 @@ export default function Feedback({ onSuccess, onError }){
                 setResponseStatus(false);
                 onError()
             }
-        }if(message.length < 10 || message.length > 10 ){
+        }if(message.length !== 18){
             setStatusPhone(true)
-        }if(message.length == 10){
+        }if(message.length == 18){
             setStatusPhone(false)
         }if(!agreeCheck){
             setStatusAgree(true)
