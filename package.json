@@ -24,6 +24,7 @@
     "react-input-mask": "^2.0.4",
     "react-input-mask-next": "^3.0.0-alpha.12",
     "react-slick": "^0.30.2",
+    "react-yandex-metrika": "^2.6.0",
     "reveal.js": "^5.1.0",
     "sass": "^1.81.0",
     "slick-carousel": "^1.8.1",
