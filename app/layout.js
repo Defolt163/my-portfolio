@@ -36,6 +36,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="icon" href="https://romanov-dev163.ru/favicon.ico" type="image/x-icon"/>
+      </head>
       <body>
         <Header/>
         {children}
