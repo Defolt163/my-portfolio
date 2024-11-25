@@ -4,6 +4,8 @@ import Script from "next/script";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SmoothBackground from "./components/Background/SmoothBackground";
+import { Suspense } from "react";
+import { Metrika } from "./components/Metrika/Metrika";
 
 export const metadata = {
   title: "Web-разработка || Gp.Romanov",
@@ -44,6 +46,9 @@ export default function RootLayout({ children }) {
         {children}
         <SmoothBackground/>
         <Script src="https://kit.fontawesome.com/073ad96d9b.js" crossorigin="anonymous"></Script>
+        <Suspense>
+          <Metrika/>
+        </Suspense>
       </body>
     </html>
   );
