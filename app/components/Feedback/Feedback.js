@@ -69,7 +69,7 @@ export default function Feedback({ onSuccess, onError }){
                 {statusPhone && <span className="error-message">Некорректный номер телефона</span>}
                 <div className="">
                     <input id="confidence" checked={agreeCheck} onChange={(e) => setAgree(e.target.checked)} type="checkbox"/>
-                    <label htmlFor="confidence">Отправляя форму вы даете согласие на обработку персональных данных</label>
+                    <label htmlFor="confidence">Отправляя форму вы даете <Link href={'/docs/confidence'} target="_blank">согласие</Link> на обработку <Link href={'/docs/policy'} target="_blank">персональных данных</Link></label>
                 </div>
                 {statusAgree && <span className="error-message mb20">Без вашего согласия, увы, никак{'('}</span>}
                 <h3 className="page-header mb20">А так-же напишите в мессенджерах!</h3>
