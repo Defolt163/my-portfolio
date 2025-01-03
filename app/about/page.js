@@ -24,7 +24,7 @@ export default function aboutPage(){
                             <li><Link href={'https://samara.hh.ru/resume/98b38a72ff09486ab30039ed1f7867524d6248'} target='_blank' className='button btn_about__me'>hh.ru</Link></li>
                             <li><Link href={'https://www.avito.ru/samara/predlozheniya_uslug/veb_razrabotka_saytov_i_veb_prilozheniy_pod_klyuch_4130968742'} target='_blank' className='button btn_about__me'>Avito</Link></li>
                         </ul>
-                        <div className='page-content mb20'>
+                        <div className='page-content mb50'>
                             <p className='mb10'>
                                 Меня зовут Михаил, я веб-разработчик из Самары. Моя специализация — создание корпоративных сайтов, веб-приложений, лендингов и интернет-магазинов.<br/><br/>
 

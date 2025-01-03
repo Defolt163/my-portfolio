@@ -50,7 +50,7 @@ export default function Feedback({ onSuccess, onError }){
     };
 
     return(
-        <section className="mb50 container center flex feedback">
+        <section className="mb50 center flex feedback">
             <div className="w60 md-w100">
                 <h3 className="mb20 feedback_promo">Если вам нужна помощь в разработке сайта, обращайтесь! Я с радостью проконсультирую вас абсолютно <strong>БЕСПЛАТНО.</strong></h3>
                 <h2 className="mb10">Оставьте свой номер телефона (без 8)</h2>
@@ -75,7 +75,6 @@ export default function Feedback({ onSuccess, onError }){
                 <h3 className="page-header mb20">А так-же напишите в мессенджерах!</h3>
                 <div className="flex">
                     <Link className="fa-brands" href={'tg://resolve?domain=gp_romanov'} target="_blank"><i className="fa-brands fa-telegram"></i></Link>
-                    <Link className="fa-brands" href={'viber://chat?number=%2B791397561466/'}><i className="fa-brands fa-viber"></i></Link>
                     <Link className="fa-brands" href={'whatsapp://send?phone=79397561466'}><i className="fa-brands fa-whatsapp"></i></Link>
                 </div>
             </div>

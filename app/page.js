@@ -192,7 +192,9 @@ export default function Home() {
         </div>
       </section>
       <Portfolio/>
-      <FeedbackContainer/>
+      <div className='container center'>
+        <FeedbackContainer/>
+      </div>
       {isModalOpen == true ? <ModalGetOrder onClose={closeModal}/> : null}
     </main>
   );

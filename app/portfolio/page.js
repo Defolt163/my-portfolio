@@ -12,7 +12,9 @@ export default function portfolioPage(){
             <div className="mb50 portfolio_page">
                 <Portfolio/>
             </div>
-            <FeedbackContainer/>
+            <div className="container center">
+                <FeedbackContainer/>
+            </div>
             <Customers/>
         </>
         

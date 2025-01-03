@@ -24,8 +24,10 @@ export default function ModalGetOrder({ onClose }){
             ) : (
                 <div className="modal">
                     <div className="modal_wrapper">
-                        <Feedback onError={() => {setShowErrorModal(true)}}
+                        <div className='container center'>
+                            <Feedback onError={() => {setShowErrorModal(true)}}
                                 onSuccess={() => setShowSuccessModal(true)} />
+                        </div>
                         <div onClick={onClose} className="modal-close"><i className="fa-solid fa-x"></i></div>
                     </div>
                 </div>
