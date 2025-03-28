@@ -53,8 +53,8 @@ export default function aboutPage(){
                             <h3 id='stack' className='page-header'>Мой стек</h3>
                             <h3 className='page-subheader font-light mb20'>Инструменты, которыми я владею</h3>
                             <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
+                                <li>HTML5</li>
+                                <li>CSS | SASS</li>
                                 <li>Js</li>
                                 <li>Figma</li>
                                 <li>ReactJs</li>
@@ -62,9 +62,11 @@ export default function aboutPage(){
                                 <li>WebSocket</li>
                                 <li>MySQL</li>
                                 <li>Git</li>
-                                <li>Flex</li>
+                                <li>Flexbox</li>
                                 <li>Bootstrap</li>
-                                <li>Sass</li>
+                                <li>Tailwind</li>
+                                <li>Websocket</li>
+                                <li>Cookie | Localstorage</li>
                                 <li>Jquery</li>
                                 <li>Node js</li>
                                 <li>Adobe Photoshop</li>
