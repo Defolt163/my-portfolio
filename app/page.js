@@ -92,13 +92,13 @@ export default function Home() {
       <section ref={el => (sectionRefs.current[0] = el)} data-index="0" className={`promo container center ${visibleSections[0] ? 'reveal' : ''} flex`}>
         <h1 className="promo_text mb20">Создание <strong>САЙТОВ</strong> и <strong>WEB</strong> приложений</h1>
         <h2 className='mb20'>Добро пожаловать! Меня зовут Михаил, я из г.Самара, занимаюсь веб разработкой {">2"} лет.<br/> В свободное от работы время я создаю свои собственные пет-проекты.</h2>
-        <div className='flex w50 mb10 promo_social__media'>
+        <div className='flex w50 mb10 promo_social__media mx-auto'>
           <Link href={'/about'} className='button btn_about__me'>Обо мне</Link>
           <Link href={'https://github.com/Defolt163'} target='_blank'  className='button btn_about__me'>GitHub</Link>
           <Link href={'https://samara.hh.ru/resume/98b38a72ff09486ab30039ed1f7867524d6248'} target='_blank' className='button btn_about__me'>hh.ru</Link>
           <Link href={'https://www.avito.ru/samara/predlozheniya_uslug/veb_razrabotka_saytov_i_veb_prilozheniy_pod_klyuch_4130968742'} target='_blank' className='button btn_about__me'>Avito</Link>
         </div>
-        <div onClick={()=>{setIsModalOpen(true)}} className='button btn_about__me red'>Связаться!</div>
+        <div onClick={()=>{setIsModalOpen(true)}} className='button btn_about__me red sized mx-auto'>Подробнее!</div>
       </section>
       <section ref={el => (sectionRefs.current[1] = el)} data-index="1" className={`partners center container mb50 ${visibleSections[1] ? 'reveal' : ''}`}>
         <h3 className='page-header'>Клиенты</h3>
@@ -118,7 +118,7 @@ export default function Home() {
       </section>
       <section ref={el => (sectionRefs.current[2] = el)} data-index="2" className={`services container center mb50 ${visibleSections[2] ? 'reveal' : ''}`}>
         <h3 className='page-header mb20'>
-          Что я могу вам <strong>ПРЕДЛОЖИТЬ</strong>
+          <strong>МОИ УСЛУГИ</strong>
         </h3>
         <div className='card_block flex'>
           <div className='card_item'>
@@ -166,27 +166,27 @@ export default function Home() {
         </h3>
         <div className='card_block flex'>
           <div className='card_item'>
-            <h3 className='mb20'>Адаптивная верстка</h3>
+            <h3 className='mb20 font-normal'>Адаптивная верстка</h3>
             <div className='mb20 services_item__text'>Грамотная адаптивная верстка гарантирует, что ваш сайт будет отлично выглядеть и функционировать на любых устройствах: от мобильных телефонов до настольных компьютеров. </div>
           </div>
           <div className='card_item'>
-            <h3 className='mb20'>Документация</h3>
+            <h3 className='mb20 font-normal'>Документация</h3>
             <div className='mb20 services_item__text'>Создание документации и инструкций по пользованию продуктом — это важный процесс, который поможет понять, как эффективно использовать продукт</div>
           </div>
           <div className='card_item'>
-            <h3 className='mb20'>Дизайн</h3>
+            <h3 className='mb20 font-normal'>Дизайн</h3>
             <div className='mb20 services_item__text'>Помогу в создании уникального дизайна для вашего сайта. Этот этап является ключевым для создания привлекательного и функционального веб-ресурса, который будет соответствовать вашему бренду и вашему ТЗ.</div>
           </div>
           <div className='card_item'>
-            <h3 className='mb20'>Соблюдение нормативных требований</h3>
+            <h3 className='mb20 font-normal'>Соблюдение нормативных требований</h3>
             <div className='mb20 services_item__text'>Нормативные акты заставляют публиковать определённую информацию и даже прибегать к определённым техническим и дизайнерским решениям.</div>
           </div>
           <div className='card_item'>
-            <h3 className='mb20'>Базовая SEO оптимизация</h3>
+            <h3 className='mb20 font-normal'>Базовая SEO оптимизация</h3>
             <div className='mb20 services_item__text'>Это набор мероприятий, направленных на улучшение видимости сайта в поисковых системах</div>
           </div>
           <div className='card_item'>
-            <h3 className='mb20'>Постановка на хостинг</h3>
+            <h3 className='mb20 font-normal'>Постановка на хостинг</h3>
             <div className='mb20 services_item__text'>Процесс размещения вашего сайта на сервере, который обеспечивает его доступность в Интернете</div>
           </div>
         </div>

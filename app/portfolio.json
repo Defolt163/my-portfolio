@@ -40,5 +40,11 @@
         "name": "Пет проект",
         "image": "/portfolio-sites/taxicap.jpg",
         "link": ""
+    },
+    {
+        "id": "revvo",
+        "name": "REVVO WebGL Приложение",
+        "image": "/portfolio-sites/revvo.jpg",
+        "link": "https://test-web-gl-sepia.vercel.app/"
     }
 ]
